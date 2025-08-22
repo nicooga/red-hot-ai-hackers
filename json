@@ -1,0 +1,133 @@
+{
+  "request_id": "req_CAMP_P001_001",
+  "version": "2025-08-22",
+  "channels": ["google_ads", "meta_ads"],
+  "landing_page_url": "https://dealer.example.com/toyota/corolla-2023-hybrid"m
+  "objective": "LEAD_GENERATION",
+  "budget": {
+    "currency": "USD",
+    "daily": 150.0,
+    "pacing": "standard"
+  },
+  "bidding": {
+    "strategy": "TARGET_CPA",
+    "target_cpa": 35.0
+  },
+  "schedule": {
+    "start_date": "2025-08-25",
+    "end_date": null,
+    "ad_schedules": [
+      { "days": ["MON","TUE","WED","THU","FRI"], "start": "08:00", "end": "20:00", "timezone": "America/Argentina/Buenos_Aires" }
+    ]
+  },
+  "targeting": {
+    "locations": [{ "type": "country", "code": "AR" }, { "type": "city", "name": "Buenos Aires", "radius_km": 40 }],
+    "devices": ["mobile", "desktop"],
+    "age_range": [25, 54],
+    "genders": ["any"],
+    "interests": ["hybrid vehicles", "fuel efficiency", "toyota"],
+    "custom_audiences": [],
+    "exclusions": { "locations": [], "audiences": [] },
+    "languages": ["es"]
+  },
+  "tracking": {
+    "utm": {
+      "source": "{channel}",
+      "medium": "cpc",
+      "campaign": "toyota_corolla_2023_hybrid_arg",
+      "content": "{ad_id}"
+    },
+    "conversion_actions": [
+      { "name": "Lead Form Submit", "type": "FORM_SUBMISSION" }
+    ],
+    "pixels": {
+      "meta": { "pixel_id": "1234567890" },
+      "google": { "conversion_action_id": "987654321" }
+    }
+  },
+  "assets": {
+    "texts": {
+      "headlines": [
+        "Toyota Corolla Hybrid 2023",
+        "Ahorra combustible sin resignar confort",
+        "Estrená tu Corolla Híbrido"
+      ],
+      "descriptions": [
+        "Bajo consumo, alto rendimiento. ¡Solicitá tu test drive!",
+        "Desde USD 24.500. Financiación disponible."
+      ],
+      "primary_texts": [
+        "Eco, cómodo y accesible. Conocé el Corolla Hybrid 2023.",
+        "Pedí una cotización online y probalo en concesionaria."
+      ],
+      "ctas": ["Solicitar información", "Cotizar ahora", "Más información"]
+    },
+    "images": [
+      {
+        "id": "img_corolla_front",
+        "url": "https://cdn.example.com/assets/corolla-front.jpg",
+        "alt": "Toyota Corolla Hybrid 2023 vista frontal"
+      },
+      {
+        "id": "img_corolla_interior",
+        "url": "https://cdn.example.com/assets/corolla-interior.jpg",
+        "alt": "Interior Corolla Hybrid 2023"
+      }
+    ],
+    "videos": []
+  },
+  "structure": {
+    "groups": [
+      {
+        "name": "Hybrid Intent",
+        "keywords": ["toyota corolla híbrido", "corolla 2023 híbrido", "auto híbrido económico"],
+        "audiences": [],
+        "placements": []
+      },
+      {
+        "name": "Fuel Efficiency",
+        "keywords": ["auto bajo consumo", "sedán eficiente", "híbrido ciudad"],
+        "audiences": [],
+        "placements": []
+      }
+    ]
+  },
+  "policy": {
+    "brand_safety": "standard",
+    "restricted_categories": [],
+    "geo_legal_checks": true
+  },
+  "provider_overrides": {
+    "google_ads": {
+      "network": "SEARCH",
+      "campaign_subtype": "LEADS",
+      "ad_format": "RESPONSIVE_SEARCH_AD",
+      "site_links": [
+        { "text": "Planes de financiación", "url": "https://dealer.example.com/financiacion" },
+        { "text": "Sucursales", "url": "https://dealer.example.com/sucursales" }
+      ],
+      "negative_keywords": ["gratis", "manual pdf", "usado barato"]
+    },
+    "meta_ads": {
+      "placements": ["facebook_feed", "instagram_feed", "instagram_stories"],
+      "optimization_goal": "LEAD",
+      "creative_mapping": {
+        "primary_text": "{assets.texts.primary_texts[0]}",
+        "headline": "{assets.texts.headlines[0]}",
+        "description": "{assets.texts.descriptions[0]}",
+        "image_id": "img_corolla_front",
+        "call_to_action": "LEARN_MORE"
+      },
+      "lead_form": {
+        "name": "Corolla Hybrid 2023 - Lead",
+        "questions": ["full_name", "email", "phone"],
+        "privacy_policy_url": "https://dealer.example.com/privacidad"
+      }
+    }
+  },
+  "execution": {
+    "dry_run": false,
+    "validate_only": true
+  },
+  "notes": "Seeded from RegistrationDraft DR-0001 for product P001"
+}
